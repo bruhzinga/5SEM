@@ -1,0 +1,1014 @@
+Z:\МоиЛабы>APPEND
+"APPEND" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+Z:\МоиЛабы>ATTRIB
+A                    Z:\МоиЛабы\1Лаба.docx
+A                    Z:\МоиЛабы\test.bat
+A   H                Z:\МоиЛабы\~$1Лаба.docx
+
+Z:\МоиЛабы>Auditpol
+Использование: AuditPol команда [<подкоманда><параметры>]
+
+
+Команды (можно указать только одну команду при каждом запуске)
+  /?               Контекстная справка.
+  /get             Отображение текущей политики аудита.
+  /set             Установка политики аудита.
+  /list            Отображение элементов политики, которые можно выбрать.
+  /backup          Сохранение политики аудита в файл.
+  /restore         Восстановление политики аудита из файла.
+  /clear           Очистка политики аудита.
+  /remove          Удаление политики аудита для каждого
+                   из пользователей учетной записи.
+  /resourceSACL    Настройка системных списков управления доступом
+                   для глобальных ресурсов.
+
+
+Используйте синтаксис AuditPol <команда> /?
+для получения сведений о соответствующей команде
+
+Z:\МоиЛабы>BASH
+"BASH" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+Z:\МоиЛабы>BCDBOOT
+
+Bcdboot — средство создания и восстановления файлов данных конфигурации загрузки.
+
+Средство командной строки bcdboot.exe предназначено для копирования в системный раздел критических файлов загрузки
+и создания нового хранилища данных конфигурации загрузки (BCD) системы.
+
+bcdboot <source> [/l <locale>] [/s <volume-letter> [/f <firmware>]] [/v]
+                 [/vbcd] [/m [{OS Loader ID}]] [/addlast] [/p] [/c]
+
+  source     Расположение корневого системного каталога Windows.
+
+  /l         Необязательный параметр, который определяет языковой стандарт
+             и используется при инициализации хранилища BCD. По умолчанию используется английский язык (США).
+
+  /s         Необязательный параметр, определяющий букву тома,
+             назначенную целевому системному разделу, в который
+             копируются файлы среды загрузки. По умолчанию используется системный раздел, который определяется
+             встроенным ПО.
+
+  /v         Включается режим подробной информации.
+
+  /vbcd      Включается ведение журнала данных конфигурации загрузки.
+
+  /m         Если есть идентификатор GUID загрузчика операционной системы, этот параметр объединяет
+             данный объект загрузчика с шаблонами системы для создания
+             записи, пригодной к загрузке. В противном случае выполняется слияние только глобальных объектов.
+
+  /d         Указывает, что необходимо сохранить существующую загрузочную запись Windows,
+             используемую по умолчанию.
+
+  /f         В сочетании с командой /s это обозначение указывает на тип встроенного ПО
+             целевого системного раздела. Параметрами для <firmware> являются "UEFI",
+             "BIOS" или "ALL".
+
+  /addlast   Запись встроенного ПО диспетчера загрузки Windows
+             должна быть добавлена последней. По умолчанию она добавляется
+             первой.
+
+  /bcdclean  Очистка хранилища данных конфигурации загрузки. По умолчанию просто удаляются все повторяющиеся
+             записи в хранилище данных конфигурации загрузки. За этим параметром может следовать атрибут "full". В этом случае
+             проводится проверка каждой записи. Если соответствующее этой записи устройство
+             не существует, запись удаляется.
+
+  /p         Позиция записи встроенного ПО диспетчера загрузки Windows
+             должна быть сохранена. Если запись не существует,
+             новая запись будет добавлена в первую позицию.
+
+  /c         Указывает, что никакие существующие объекты, описанные в шаблоне
+             не должны перемещаться.
+
+Примеры: bcdboot c:\windows /l en-us
+          bcdboot c:\windows /s h:
+          bcdboot c:\windows /s h: /f UEFI
+          bcdboot c:\windows /m {d58d10c6-df53-11dc-878f-00064f4f4e08}
+          bcdboot c:\windows /d /addlast
+          bcdboot c:\windows /p
+
+Z:\МоиЛабы>BCDEDIT
+
+Диспетчер загрузки Windows
+--------------------
+идентификатор           {bootmgr}
+device                  partition=\Device\HarddiskVolume1
+path                    \EFI\Microsoft\Boot\bootmgfw.efi
+description             Windows Boot Manager
+locale                  ru-RU
+inherit                 {globalsettings}
+default                 {current}
+resumeobject            {9d4b08bf-2c99-11ed-8c55-080027d35c5a}
+displayorder            {current}
+toolsdisplayorder       {memdiag}
+timeout                 5
+
+Загрузка Windows
+-------------------
+идентификатор           {current}
+device                  partition=C:
+path                    \Windows\system32\winload.efi
+description             Windows 11 22000
+locale                  ru-RU
+inherit                 {bootloadersettings}
+isolatedcontext         Yes
+allowedinmemorysettings 0x15000075
+osdevice                partition=C:
+systemroot              \Windows
+resumeobject            {9d4b08bf-2c99-11ed-8c55-080027d35c5a}
+nx                      OptIn
+bootmenupolicy          Standard
+
+Z:\МоиЛабы>BOOTCFG
+"BOOTCFG" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+Z:\МоиЛабы>BOOTIM
+
+Z:\МоиЛабы>BOOTREC
+"BOOTREC" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+Z:\МоиЛабы>BOOTSECT
+
+bootsect {/help|/nt60|/nt52} {SYS|ALL|<буква_диска>:} [/force] [/mbr]
+
+Средство восстановления загрузочного сектора
+
+Bootsect.exe обновляет основной загрузочный код для разделов жесткого диска для
+переключения между BOOTMGR и NTLDR.  Вы можете использовать это средство
+для восстановления загрузочного сектора на вашем компьютере.
+
+Для получения подробных инструкций по использованию запустите команду "bootsect /help".
+
+Z:\МоиЛабы>BREAK
+
+Z:\МоиЛабы>CACLS
+
+ ПРИМЕЧАНИЕ. CACLS считается устаревшей, рекомендуется использовать ICACLS.
+
+ Просмотр и изменение списков управления доступом (ACL) к файлам
+
+ CACLS имя_файла [/T] [/M] [/L] [/S[:SDDL]] [/E] [/C] [/G имя:доступ]
+        [/R имя [...]] [/P имя:доступ [...]] [/D имя [...]]
+    имя_файла     Просмотр списков управления доступом.
+    /T            Изменение списков управления доступом для указанных файлов
+                  в текущем каталоге и вложенных каталогах.
+    /L            Работа с самой символической ссылкой, а не с объектом.
+    /M            Изменение ACL томов, подключенных к каталогу.
+    /S            Отображение строки SDDL для DACL.
+    /S:SDDL       Замена ACL на указанные в строке SDDL
+                  (не используется с ключами /E, /G, /R, /P и /D).
+    /E            Изменение списка управления доступом вместо его замены.
+    /C            Продолжение при ошибках отказа в доступе.
+    /G имя:доступ Разрешения для указанных пользователей.
+                  Доступ:  R  - чтение
+                           W  - запись
+                           C  - изменение (запись)
+                           F  - полный доступ
+    /R имя       Отзыв разрешений для пользователя (только вместе с /E).
+    /P имя:доступ  Замена разрешений указанного пользователя.
+                 Доступ:  N  - нет
+                          R  - чтение
+                          W  - запись
+                          C  - изменение (запись)
+                          F  - полный доступ
+    /D имя       Запрет на доступ пользователя.
+ Для выбора нескольких файлов используются подстановочные знаки.
+  В команде можно указать несколько пользователей.
+
+ Сокращения:
+    CI - наследование контейнерами.
+         ACE наследуется каталогами.
+    OI - наследование объектами.
+         ACE наследуется файлами.
+    IO - только наследование.
+         ACE не применяется к текущему файлу или каталогу.
+    ID - наследование.
+         ACE наследуется от ACL родительского каталога.
+
+Z:\МоиЛабы>CALL
+
+Z:\МоиЛабы>CD
+Z:\МоиЛабы
+
+Z:\МоиЛабы>CHANGE
+Ошибка в параметрах
+CHANGE { LOGON | PORT | USER }
+
+Z:\МоиЛабы>CHGLOGON
+Включение, отключение или сток входов сеансов.
+
+CHANGE LOGON {/QUERY | /ENABLE | /DISABLE | /DRAIN | /DRAINUNTILRESTART}
+
+  /QUERY    Опрос текущего режима входа сеанса.
+  /ENABLE   Включение входа пользователя из сеанса.
+  /DISABLE  Отключение входа пользователей из сеансов.
+  /DRAIN    Запрещает входить в систему новым пользователям, но разрешает
+ повторное подключение к существующим сеансам.
+  /DRAINUNTILRESTART    Запрещает входить в систему новым пользователям до
+ перезагрузки сервера, но разрешает повторное подключение к существующим
+ сеансам.
+
+Z:\МоиЛабы>CHGPORT -
+Последовательные порты не найдены.
+
+Z:\МоиЛабы>CHGUSR
+Изменение режима установки.
+
+CHANGE USER {/EXECUTE | /INSTALL | /QUERY}
+
+  /EXECUTE  Разрешение режима выполнения (по умолчанию).
+  /INSTALL  Разрешение режима установки.
+  /QUERY    Отображение текущих параметров.
+
+
+Z:\МоиЛабы>CHCP
+Текущая кодовая страница: 866
+
+Z:\МоиЛабы>CHKDSK
+Windows не может проверить диск, подключенный через сеть.
+
+Z:\МоиЛабы>CheckNetIsolatin
+"CheckNetIsolatin" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+Z:\МоиЛабы>CHKNTFS
+Необходимо указать хотя бы один диск.
+
+Z:\МоиЛабы>CHOICE CIPHER
+ОШИБКА: Неправильный параметр или аргумент - 'CIPHER'.
+Введите "CHOICE /?" для получения справки по использованию.
+
+Z:\МоиЛабы>CLEARMGR -
+"CLEARMGR" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+Z:\МоиЛабы>CLIP
+
+ИНФОРМАЦИЯ: Введите "CLIP /?" для получения справки по использованию.
+
+Z:\МоиЛабы>CMDKEY -
+
+Неправильные параметры командной строки.
+
+Синтаксис данной команды:
+
+CMDKEY [{/add | /generic}:targetname {/smartcard | /user:username
+{/pass{:password}}} | /delete{:targetname | /ras} | /list{:targetname}]
+
+Примеры:
+
+  Чтобы перечислить доступные учетные данные:
+     cmdkey /list
+     cmdkey /list:targetname
+
+  Чтобы создать учетные данные домена:
+     cmdkey /add:targetname /user:username /pass:password
+     cmdkey /add:targetname /user:username /pass
+     cmdkey /add:targetname /user:username
+     cmdkey /add:targetname /smartcard
+
+  Чтобы создать общие учетные данные:
+     Чтобы создать общие учетные данные, переключатель /add может быть заменен
+     на /generic
+
+  Чтобы удалить существующие учетные данные:
+     cmdkey /delete:targetname
+
+  Чтобы удалить учетные данные RAS:
+     cmdkey /delete /ras
+
+
+Z:\МоиЛабы>COLOR-
+"COLOR-" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+Z:\МоиЛабы>COMP
+Имя первого файла для сравнения: test.bat
+Имя второго файла для сравнения: test.bat
+Параметр : 1
+Неправильный синтаксис командной строки
+
+
+Z:\МоиЛабы>COMPACT
+
+ Просмотр каталога Z:\МоиЛабы\
+ Новые файлы, добавляемые в этот каталог, не будут сжаты.
+
+    46604 :     46604 = 1,0 к 1   1Лаба.docx
+      770 :       770 = 1,0 к 1   test.bat
+
+Всего файлов: 3, каталогов: 1.
+Из них сжато: 0, не сжато: 3.
+Данные объемом 47 536 байт сохранены в 47 536 байт.
+Степень сжатия 1,0 к 1.
+
+
+Z:\МоиЛабы>CONVERT
+Команда CONVERT неприменима к сетевым дискам.
+
+Z:\МоиЛабы>COPY
+Ошибка в синтаксисе команды.
+
+Z:\МоиЛабы>Cscript
+Сервер сценариев Windows (Microsoft ®) версия 5.812
+Copyright (C) Корпорация Майкрософт 1996-2006, все права защищены.
+
+Использование: CScript имя_сценария.расширение [параметры...] [аргументы...]
+
+Параметры:
+ //B            Пакетный режим: подавляются отображение ошибок и запросов сценария
+ //D            Включение режима Active Debugging
+ //E:ядро       Использование указанного ядра для выполнения сценария
+ //H:CScript    Стандартный сервер сценариев заменяется на CScript.exe
+ //H:WScript    Стандартный сервер сценариев заменяется на WScript.exe (по умолчанию)
+ //I            Диалоговый режим (по умолчанию, в противоположность //B)
+ //Job:xxxx     Выполнение указанного задания WSF
+ //Logo         Отображать сведения о программе (по умолчанию)
+ //Nologo       Не отображать сведения о программе во время выполнения
+ //S            Сохранить для данного пользователя текущие параметры командной строки
+ //T:nn         Интервал ожидания (в секундах):  максимальное время выполнения сценария
+ //X            Выполнение сценария в отладчике
+ //U            Использование кодировки Юникод при перенаправлении ввода-вывода с консоли
+
+Z:\МоиЛабы>DATE -
+Указана недопустимая дата.
+Введите новую дату (дд-мм-гг): 12.12.12
+
+Z:\МоиЛабы>DEFRAG
+
+Defrag <Тома> <Операции> [<Options>]
+
+Тома:
+  /C | /AllVolumes      На каждом томе выполняются только предпочитаемые операции из
+                        указанного списка операций.
+  /E | /VolumesExcept <пути к томам>
+                        Выполнять все заданные операции для каждого тома, кроме
+                        указанных. Если список исключений пуст,
+                        действует как параметр /AllVolumes.
+  volume paths          Буква диска с двоеточием после нее, точка подключения
+                        или имя тома. Для большинства операций можно указать несколько томов.  Запуск
+                        всех заданных операций для каждого указанного тома.
+
+Операции:
+  /A | /Analyze         Выполнение анализа.
+  /B | /BootOptimize    Оптимизация загрузки для повышения ее производительности.
+  /D | /Defrag          Стандартная дефрагментация (по умолчанию). Однако на многоуровневом томе
+                        традиционная дефрагментация выполняется только на уровне
+                        емкости.
+  /G | /TierOptimize    В многоуровневых томах: оптимизация файлов для хранения на соответствующем
+                        уровне хранилища.
+  /K | /SlabConsolidate На томах с тонкой подготовкой выполняет оптимизацию памяти для
+                        повышения эффективности использования слоев.
+  /L | /Retrim          На томах с тонкой подготовкой: повторная оптимизация для освобождения свободных
+                        слоев. На твердотельных накопителях: повторная оптимизация для повышения производительности операций записи.
+  /O | /Optimize        Оптимизация с использованием соответствующего типу носителя метода.
+  /T | /TrackProgress   Отслеживание хода выполнения запущенной операции для заданного тома. Экземпляр
+                        может показывать ход выполнения только для одного тома. Чтобы увидеть
+                        ход выполнения для другого тома, запустите другой экземпляр.
+  /U | /PrintProgress   Отображение хода выполнения операции на экране.
+  /V | /Verbose         Вывод подробных данных статистики фрагментации.
+  /X | /FreespaceConsolidate
+                        Объединение свободного пространства перемещает свободное место в
+                        конец тома (даже на томах с тонкой подготовкой). В
+                        многоуровневых томах объединение выполняется только на уровне
+                        емкости.
+
+Параметры:
+  /H | /NormalPriority  Запуск операции с обычным приоритетом (по умолчанию с низким).
+  /I | /MaxRuntime n    Доступно только с TierOptimize. Оптимизация уровней
+                        будет выполняться не более n с на каждом томе.
+       /LayoutFile <путь_к_файлу>
+                        Доступно только с BootOptimize. Этот файл содержит список
+                        файлов, подлежащих оптимизации. Расположение по умолчанию:
+                        %windir%\Prefetch\layout.ini.
+  /M | /MultiThread [n] Выполнить операцию с каждым томом параллельно в фоновом режиме.
+                        Для TierOptimize максимум n потоков оптимизируют уровни хранилища
+                        параллельно. Значение по умолчанию равно 8. Все остальные оптимизации
+                        игнорируют n.
+       /OnlyPreferred   В случае явного указания томов, дефрагментация выполняет
+                        все заданные операции для каждого указанного тома.  Это переключение
+                        позволяет дефрагментации выполнять только предпочитаемые операции из
+                        указанного списка операций для каждого указанного тома.
+
+Примеры:
+  Defrag C: /U /V
+  Defrag C: D: /TierOptimize /MultiThread
+  Defrag C:\mountpoint /Analyze /U
+  Defrag /C /H /V
+
+Z:\МоиЛабы>DEL
+Ошибка в синтаксисе команды.
+
+Z:\МоиЛабы>DevCon
+"DevCon" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+Z:\МоиЛабы>DIANTZ
+"DIANTZ" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+Z:\МоиЛабы>DIR
+ Том в устройстве Z имеет метку VBOX_OS
+ Серийный номер тома: 2061-A59F
+
+ Содержимое папки Z:\МоиЛабы
+
+04.09.2022  15:06    <DIR>          .
+03.09.2022  11:03    <DIR>          ..
+03.09.2022  14:07            46 604 1Лаба.docx
+04.09.2022  15:16               770 test.bat
+               2 файлов         47 374 байт
+               2 папок  26 333 343 744 байт свободно
+
+Z:\МоиЛабы>DISKCOMP
+"DISKCOMP" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+Z:\МоиЛабы>DISKCOPY
+"DISKCOPY" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+Z:\МоиЛабы>DISKPART
+
+Microsoft DiskPart, версия 10.0.22000.1
+
+(C) Корпорация Майкрософт (Microsoft Corporation).
+На компьютере: HOME-PC
+
+DISKPART> Завершить выполнение пакетного файла [Y(да)/N(нет)]? n
+
+Z:\МоиЛабы>DISM
+
+Cистема DISM
+Версия: 10.0.22000.1
+
+
+DISM.exe [параметры_dism] {команда_работы_с_образами}
+         [<аргументы_работы_с_образами>]
+DISM.exe {/Image:<путь_к_автономному_образу> | /Online} [параметры_dism]
+         {служебная_команда} [<аргументы_служебной_команды>]
+
+ОПИСАНИЕ:
+
+  DISM перечисляет, устанавливает, удаляет, настраивает и обновляет компоненты
+  и пакеты в образах Windows. Список доступных команд зависит от
+  обслуживаемого образа, а также от того, находится ли образ в автономном или
+  рабочем состоянии.
+
+
+КОМАНДЫ FFU:
+
+  /Capture-Ffu            - Записывает образ физического диска в новый FFU-файл.
+  /Apply-Ffu              - Применение образа .ffu.
+  /Split-Ffu              - Разделяет существующий .ffu-файл на несколько
+                            разделенных FFU-файлов только для чтения.
+  /Optimize-Ffu           - Оптимизирует FFU-файл для применения к хранилищу
+                            другого размера.
+
+КОМАНДЫ WIM:
+
+  /Apply-CustomDataImage  - Консервирует файлы, содержащиеся в настраиваемом образе данных.
+  /Capture-CustomImage    - Записывает настройки в разностный WIM-файл в
+                            системе WIMBoot. Записанные каталоги включают все
+                            вложенные папки и данные.
+  /Get-WIMBootEntry       - Выводит записи конфигурации WIMBoot для указанного тома диска.
+  /Update-WIMBootEntry    - Обновляет запись конфигурации WIMBoot для указанного тома диска.
+  /List-Image             - Отображает список файлов и папок в
+                            указанном образе.
+  /Delete-Image           - Удаляет указанный образ тома из WIM-файла,
+                            содержащего несколько образов томов.
+  /Export-Image           - Экспортирует копию указанного образа в другой
+                            файл.
+  /Append-Image           - Добавление другого образа в WIM-файл.
+  /Capture-Image          - Записывает образ диска в новый WIM-файл.
+                            Записанные каталоги включают все подкаталоги и
+                            данные.
+  /Get-MountedWimInfo     - Отображает сведения о подключенных из WIM образах.
+  /Get-WimInfo            - Отображает сведения об образах в WIM-файле.
+  /Commit-Wim             - Сохраняет изменения подключенного из WIM образа.
+  /Unmount-Wim            - Отключает подключенный из WIM образ.
+  /Mount-Wim              - Подключает образ из WIM-файла.
+  /Remount-Wim            - Восстанавливает потерянный каталог подключения WIM.
+  /Cleanup-Wim            - Удаляет ресурсы, связанные с поврежденными
+                            подключенными WIM-образами.
+
+ОБЩИЕ КОМАНДЫ ДЛЯ РАБОТЫ С ОБРАЗАМИ ДИСКОВ:
+
+  /Split-Image            - Делит существующий WIM-файл на несколько
+                            WIM-файлов (SWM), доступных только для чтения.
+  /Apply-Image            - Применение изображения.
+  /Get-MountedImageInfo   - Отображает сведения о подключенных
+                            WIM- и VHD-образах.
+  /Get-ImageInfo          - Отображает сведения об образах в WIM-, VHD-
+                            или FFU- файле.
+  /Commit-Image           - Сохраняет изменения подключенного
+                            WIM- или VHD-образа.
+  /Unmount-Image          - Отключает подключенный WIM- или VHD-образ.
+  /Mount-Image            - Подключает образ из WIM- или VHD-файла.
+  /Remount-Image          - Восстанавливает каталог подключения
+                            потерянного образа.
+  /Cleanup-Mountpoints    - Удаляет ресурсы, связанные с поврежденными
+                            подключенными образами.
+
+СПЕЦИФИКАЦИИ ОБРАЗА:
+
+  /Online                 - Задает работающую операционную систему как
+                            назначение.
+  /Image                  - Задает путь к корневому каталогу
+                            автономного образа Windows.
+
+ПАРАМЕТРЫ DISM:
+
+  /English                - Отображает данные, выводимые командной строкой,
+                            на английском языке.
+  /Format                 - Задает формат отчета.
+  /WinDir                 - Задает путь к каталогу Windows.
+  /SysDriveDir            - Задает путь к файлу системного загрузчика с именем
+                            BootMgr.
+  /LogPath                - Задает путь к файлу журнала.
+  /LogLevel               - Задает уровень ведения журнала событий (1-4).
+  /NoRestart              - Запрещает автоматическую перезагрузку и вывод
+                            пользователю предложений выполнить перезагрузку.
+  /Quiet                  - Скрывает все сведения за исключением
+                            сообщений об ошибках.
+  /ScratchDir             - Задает путь к каталогу временных файлов.
+
+Для получения сведений об этих параметрах DISM и их аргументах укажите
+требуемый параметр перед "/?".
+
+  Примеры:
+
+    DISM.exe /Mount-Wim /?
+    DISM.exe /ScratchDir /?
+    DISM.exe /Image:C:\test\offline /?
+    DISM.exe /Online /?
+
+
+
+Z:\МоиЛабы>DISPDIAG
+Dump file: Z:\???????\DispDiag-20220904-141640-3644-4056.dat
+
+Z:\МоиЛабы>DJOIN .
+Использование: djoin.exe [/OPTIONS]
+
+  /PROVISION - подготавливает учетную запись компьютера в домене.
+      /DOMAIN <имя> - <имя> домена, к которому необходимо присоединиться.
+      /MACHINE <имя> - <имя> компьютера, присоединяемого к домену.
+      /MACHINEOU <OU> - необязательный параметр, определяющий подразделение
+                        <OU>, в котором создается учетная запись.
+      /DCNAME <DC> - необязательный параметр, определяющий целевой контроллер
+                     домена <DC>, на котором будет создана учетная запись.
+      /REUSE - повторно использовать существующую учетную запись (пароль
+               будет сброшен).
+      /SAVEFILE <путь_к_файлу> - сохранить данные подготовки в файл,
+                                 расположенный по указанному пути.
+      /NOSEARCH - пропустить обнаружение конфликтов учетных записей;
+                  требуется DCNAME (более высокая производительность).
+      /DOWNLEVEL - обеспечивает поддержку контроллера домена Windows Server
+                   2008 или более ранней версии.
+      /PRINTBLOB - возвращает большой двоичный объект метаданных в кодировке
+                   base64 для файла ответов.
+      /DEFPWD - использовать пароль учетной записи компьютера по умолчанию
+                (не рекомендуется).
+      /ROOTCACERTS - необязательный параметр, включить корневые сертификаты
+                     центра сертификации.
+      /CERTTEMPLATE <имя> - необязательный параметр, <имя> шаблона сертификата
+                            компьютера. Включает корневые сертификаты центра
+                            сертификации.
+      /POLICYNAMES <имена> - необязательный параметр, список имен политик,
+                             разделенных точкой с запятой. Каждое имя является
+                             отображаемым именем объекта групповой политики
+                             в AD.
+      /POLICYPATHS <пути> - необязательный параметр, список путей к политикам,
+                            разделенных точкой с запятой.
+                            Каждый путь указывает на расположение файла
+                            политик реестра.
+      /NETBIOS <имя> - необязательный параметр, Netbios-имя компьютера,
+                       присоединяемого к домену.
+      /PSITE <имя> - необязательный параметр, <имя> постоянного сайта,
+                     в который нужно поместить компьютер, присоединяемый
+                     к домену.
+      /DSITE <имя> - необязательный параметр, <имя> динамического сайта, в
+                     который первоначально помещается компьютер, присоединяемый
+                     к домену.
+   /PRIMARYDNS <имя> - необязательный параметр, основной DNS-домен компьютера,
+                       присоединяемого к домену.
+
+  /REQUESTODJ - требует автономного присоединения к домену при следующей
+                загрузке.
+      /LOADFILE <путь_к_файлу> - <путь_к_файлу>, указанный ранее с помощью
+                                 параметра /SAVEFILE.
+      /WINDOWSPATH <путь> - <путь> к каталогу с автономным образом Windows.
+      /LOCALOS - позволяет указывать в параметре /WINDOWSPATH локальную
+                 операционную систему.
+                 Эту команду должен выполнять локальный администратор.
+                 Для применения изменений потребуется перезагрузить компьютер.
+
+Примеры:
+
+Подготовка учетной записи компьютера в домене:
+djoin.exe /PROVISION /DOMAIN <имя_домена> /MACHINE <имя_компьютера>
+          /SAVEFILE <путь_к_файлу>
+          Примечание. Другие параметры являются необязательными.
+
+Запрос на автономное присоединение локального компьютера к домену:
+djoin.exe /REQUESTODJ /LOADFILE <путь_к_файлу> /WINDOWSPATH <путь>
+           Примечание. Другие параметры являются необязательными
+Параметр задан неверно.
+
+Z:\МоиЛабы>DOSKEY
+
+Z:\МоиЛабы>DRIVERQUERY
+
+Модуль       Название               Тип драйвера  Дата ссылки
+============ ====================== ============= ======================
+1394ohci     1394 OHCI-совместимый  Kernel
+3ware        3ware                  Kernel        19.05.2015 1:28:03
+ACPI         Драйвер Microsoft ACPI Kernel
+AcpiDev      Драйвер устройств с AC Kernel
+acpiex       Microsoft ACPIEx Drive Kernel
+acpipagr     Драйвер агрегатора про Kernel
+AcpiPmi      Драйвер устройства изм Kernel
+acpitime     Драйвер ACPI Wake Alar Kernel
+Acx01000     Acx01000               Kernel
+ADP80XX      ADP80XX                Kernel        09.04.2015 23:49:48
+AFD          Драйвер дополнительных Kernel
+afunix       afunix                 Kernel
+ahcache      Application Compatibil Kernel
+amdgpio2     Драйвер GPIO-клиента A Kernel        07.02.2019 12:32:20
+amdi2c       Служба контроллера I2C Kernel        20.03.2019 7:57:33
+AmdK8        AMD K8 драйвер процесс Kernel
+AmdPPM       Драйвер процессора AMD Kernel
+amdsata      amdsata                Kernel        14.05.2015 15:14:52
+amdsbs       amdsbs                 Kernel        12.12.2012 0:21:44
+amdxata      amdxata                Kernel        01.05.2015 3:55:35
+AppID        Драйвер AppID          Kernel
+AppleSSD     Твердотельный накопите Kernel        12.11.2019 0:24:17
+applockerflt Драйвер фильтра Smartl Kernel
+arcsas       Adaptec SAS/SATA-II RA Kernel        09.04.2015 22:12:07
+AsyncMac     Драйвер асинхронного н Kernel
+atapi        Канал IDE              Kernel
+b06bdrv      Сетевой адаптер VBD QL Kernel        25.05.2016 10:03:08
+bam          Background Activity Mo Kernel
+BasicDisplay BasicDisplay           Kernel
+BasicRender  BasicRender            Kernel
+bcmfn2       bcmfn2 Service         Kernel        01.11.2016 5:09:15
+Beep         Beep                   Kernel
+bindflt      Windows Bind Filter Dr File System
+bowser       Браузер                File System
+BthA2dp      Microsoft Bluetooth A2 Kernel
+BthEnum      Служба перечислителя B Kernel
+BthHFEnum    Драйвер профиля гарнит Kernel
+BthLEEnum    Драйвер Bluetooth с ни Kernel
+BthMini      Драйвер радио Bluetoot Kernel
+BTHMODEM     Драйвер связи Bluetoot Kernel
+BTHPORT      Драйвер порта Bluetoot Kernel
+BTHUSB       Драйвер порта USB ради Kernel
+bttflt       Фильтр Microsoft Hyper Kernel
+buttonconver Служба для устройств к Kernel
+CAD          Драйвер вынесения реше Kernel
+cdfs         CD/DVD File System Rea File System
+cdrom        Драйвер CD-ROM дисково Kernel
+cht4iscsi    cht4iscsi              Kernel        05.02.2019 16:51:31
+cht4vbd      Драйвер виртуальной ши Kernel        05.02.2019 16:47:51
+CimFS        CimFS                  File System
+circlass     Потребительские ИК-уст Kernel
+CldFlt       Windows Cloud Files Fi File System
+CLFS         Common Log (CLFS)      Kernel
+CmBatt       Драйвер батареи с ACPI Kernel
+CNG          CNG                    Kernel
+cnghwassist  CNG Hardware Assist al Kernel
+CompositeBus Драйвер перечислителя  Kernel
+condrv       Console Driver         Kernel
+dam          Desktop Activity Moder Kernel
+Dfsc         Драйвер клиента простр File System
+disk         Драйвер диска          Kernel
+drmkaud      Доверенные аудиодрайве Kernel
+DXGKrnl      LDDM Graphics Subsyste Kernel
+E1G60        Драйвер адаптера Intel Kernel        24.03.2010 0:08:16
+ebdrv        Адаптер QLogic 10 Giga Kernel        15.11.2020 13:12:10
+ebdrv0       QLogic Legacy Ethernet Kernel        07.11.2020 13:07:41
+EhStorClass  Enhanced Storage Filte Kernel
+EhStorTcgDrv Драйвер Майкрософт для Kernel
+ErrDev       Microsoft Hardware Err Kernel
+ExecutionCon CPU Scheduler for High Kernel
+exfat        exFAT File System Driv File System
+fastfat      FAT12/16/32 File Syste File System
+fdc          Драйвер контроллера ги Kernel
+FileCrypt    FileCrypt              File System
+FileInfo     File Information FS Mi File System
+Filetrace    Filetrace              File System
+flpydisk     Драйвер дисковода гибк Kernel
+FltMgr       Диспетчер фильтров     File System
+FsDepends    File System Dependency File System
+genericusbfn Общий класс функции US Kernel
+GPIOClx0101  Microsoft GPIO Class E Kernel
+GpuEnergyDrv GPU Energy Driver      Kernel
+HdAudAddServ Драйвер функции UAA дл Kernel
+HDAudBus     Драйвер для шины UAA д Kernel
+HidBatt      Драйвер батареи ИБП HI Kernel
+HidBth       Microsoft Bluetooth HI Kernel
+hidi2c       Драйвер минипорта для  Kernel
+hidinterrupt Общий драйвер для кноп Kernel
+HidIr        Microsoft Infrared HID Kernel
+hidspi       Драйвер минипорта для  Kernel
+HidSpiCx     HidSpi KMDF Class Exte Kernel
+HidUsb       Драйвер класса HID Mic Kernel
+HpSAMD       HpSAMD                 Kernel        27.03.2013 0:36:54
+HTTP         HTTP-служба            Kernel
+HwNClx0101   Microsoft Hardware Not Kernel
+hwpolicy     Hardware Policy Driver Kernel
+i8042prt     Драйвер i8042-клавиату Kernel
+iagpio       Драйвер контроллера GP Kernel        23.07.2018 12:04:46
+iai2c        Intel(R) Serial IO I2C Kernel        23.07.2018 12:04:39
+iaLPSS2i_GPI Драйвер версии 2 Intel Kernel        19.04.2018 10:53:24
+iaLPSS2i_GPI Драйвер версии 2 интер Kernel        17.04.2018 12:25:15
+iaLPSS2i_GPI Драйвер версии 2 интер Kernel        17.04.2018 10:07:03
+iaLPSS2i_GPI Драйвер версии 2 интер Kernel        16.05.2018 8:46:36
+iaLPSS2i_I2C Драйвер версии 2 Intel Kernel        19.04.2018 10:52:58
+iaLPSS2i_I2C Драйвер версии 2 I2C д Kernel        17.04.2018 12:24:40
+iaLPSS2i_I2C Драйвер версии 2 интер Kernel        15.07.2019 8:12:12
+iaLPSS2i_I2C Драйвер версии 2 интер Kernel        16.05.2018 8:46:02
+iaLPSSi_GPIO Драйвер контроллера In Kernel        02.02.2015 12:00:09
+iaLPSSi_I2C  Драйвер Intel(R) Seria Kernel        24.02.2015 18:52:07
+iaStorAVC    RAID-контроллер SATA д Kernel        05.09.2019 15:07:32
+iaStorV      RAID-контроллер Intel  Kernel        11.04.2011 21:48:16
+ibbus        Mellanox InfiniBand Bu Kernel        19.06.2019 16:20:09
+IndirectKmd  Драйвер режима ядра не Kernel
+intelide     intelide               Kernel
+intelpep     Драйвер подключаемого  Kernel
+intelpmax    Драйвер диспетчера Int Kernel
+IntelPMT     Служба технологии мони Kernel
+intelppm     Драйвер Intel процессо Kernel
+iorate       Драйвер фильтра скорос Kernel
+IpFilterDriv Драйвер фильтра IP-тра Kernel
+IPMIDRV      IPMIDRV                Kernel
+IPNAT        IP Network Address Tra Kernel
+IPT          IPT                    Kernel
+isapnp       isapnp                 Kernel
+iScsiPrt     Драйвер iScsiPort      Kernel
+ItSas35i     ItSas35i               Kernel        18.09.2020 13:23:25
+kbdclass     Драйвер класса клавиат Kernel
+kbdhid       Драйвер клавиатуры HID Kernel
+kbldfltr     kbldfltr               Kernel
+kdnic        Мини-порт сетевого ада Kernel
+KSecDD       KSecDD                 Kernel
+KSecPkg      KSecPkg                Kernel
+ksthunk      Kernel Streaming Thunk Kernel
+lltdio       Ответчик обнаружения т Kernel
+LSI_SAS      LSI_SAS                Kernel        25.03.2015 22:36:48
+LSI_SAS2i    LSI_SAS2i              Kernel        02.08.2017 16:29:59
+LSI_SAS3i    LSI_SAS3i              Kernel        21.08.2020 10:33:28
+luafv        Виртуализация файла ко File System
+mausbhost    Драйвер хост-контролле Kernel
+mausbip      Драйвер IP-фильтр MA-U Kernel
+MbbCx        MBB Network Adapter Cl Kernel
+megasas2i    megasas2i              Kernel        22.01.2020 12:57:48
+megasas35i   megasas35i             Kernel        12.01.2021 10:59:10
+megasr       megasr                 Kernel        04.06.2013 1:02:39
+Microsoft_Bl Драйвер транспорта AVR Kernel
+mlx4_bus     Перечислитель шины Mel Kernel        19.06.2019 16:21:08
+MMCSS        Multimedia Class Sched Kernel
+Modem        Modem                  Kernel
+monitor      Microsoft Monitor Clas Kernel
+mouclass     Драйвер класса мыши    Kernel
+mouhid       Драйвер мыши HID       Kernel
+mountmgr     Диспетчер точек подклю Kernel
+mpi3drvi     mpi3drvi               Kernel        03.03.2021 0:23:11
+mpsdrv       Windows Defender Firew Kernel
+MRxDAV       Драйвер перенаправител File System
+mrxsmb       Оболочка и модуль мини File System
+mrxsmb20     Мини-перенаправитель S File System
+MsBridge     MAC-мост (Майкрософт)  Kernel
+Msfs         Msfs                   File System
+msgpiowin32  Общий драйвер для кноп Kernel
+mshidkmdf    Pass-through HID to KM Kernel
+mshidumdf    Сквозной драйвер HID-U Kernel
+msisadrv     msisadrv               Kernel
+MSKSSRV      Представитель служб по Kernel
+MsLldp       Протокол Microsoft LLD Kernel
+MSPCLOCK     Посредник синхронизаци Kernel
+MSPQM        Представитель диспетче Kernel
+MsQuic       MsQuic                 Kernel        16.05.2021 22:09:52
+MsRPC        MsRPC                  Kernel
+mssmbios     Драйвер Microsoft Syst Kernel
+MSTEE        Преобразователь потоко Kernel
+MTConfig     Microsoft Input Config Kernel
+Mup          Mup                    File System
+mvumis       mvumis                 Kernel        23.05.2014 23:39:04
+NativeWifiP  Фильтр NativeWiFi      Kernel
+ndfltr       Служба NetworkDirect   Kernel        19.06.2019 16:18:42
+NDIS         Системный драйвер NDIS Kernel
+NdisCap      Захват Microsoft NDIS  Kernel
+NdisImPlatfo Протокол мультиплексор Kernel
+NdisTapi     NDIS-драйвер TAPI удал Kernel
+Ndisuio      NDIS Usermode I/O Prot Kernel
+NdisVirtualB Перечислитель виртуаль Kernel
+NdisWan      NDIS-драйвер глобально Kernel
+ndiswanlegac Устаревшая версия NDIS Kernel
+NDKPerf      NDKPerf Driver         Kernel
+NDKPing      NDKPing Driver         Kernel
+ndproxy      NDIS Proxy Driver      Kernel
+Ndu          Windows Network Data U Kernel
+NetAdapterCx Network Adapter Wdf Cl Kernel
+NetBIOS      NetBIOS Interface      File System
+NetBT        NetBT                  Kernel
+Npfs         Npfs                   File System
+npsvctrig    Named pipe service tri Kernel
+nsiproxy     NSI Proxy Service Driv Kernel
+Ntfs         Ntfs                   File System
+Null         Null                   Kernel
+nvdimm       Драйвер устройства (Ма Kernel
+nvmedisk     Драйвер диска Microsof Kernel
+nvraid       nvraid                 Kernel        21.04.2014 21:28:42
+nvstor       nvstor                 Kernel        21.04.2014 21:34:03
+Parport      Драйвер параллельного  Kernel
+partmgr      Драйвер разделов       Kernel
+pci          Драйвер шины PCI       Kernel
+pciide       pciide                 Kernel
+pcmcia       pcmcia                 Kernel
+pcw          Performance Counters f Kernel
+pdc          pdc                    Kernel
+PEAUTH       PEAUTH                 Kernel
+percsas2i    percsas2i              Kernel        15.03.2016 3:50:11
+percsas3i    percsas3i              Kernel        02.06.2018 0:47:02
+PktMon       Packet Monitor Driver  Kernel
+pmem         Драйвер диска энергоне Kernel
+PNPMEM       Драйвер модуля памяти  Kernel
+portcfg      portcfg                Kernel
+PptpMiniport Мини-порт глобальной с Kernel
+PRM          Драйвер Microsoft PRM  Kernel
+Processor    Драйвер процессора     Kernel
+Psched       Планировщик пакетов Qo Kernel
+QWAVEdrv     Драйвер QWAVE          Kernel
+Ramdisk      Windows RAM Disk Drive Kernel
+RasAcd       Remote Access Auto Con Kernel
+RasAgileVpn  Мини-порт глобальной с Kernel
+Rasl2tp      Мини-порт глобальной с Kernel
+RasPppoe     Драйвер PPPOE для удал Kernel
+RasSstp      Мини-порт глобальной с Kernel
+rdbss        Перенаправленная подси File System
+rdpbus       Драйвер шины перенапра Kernel
+RDPDR        Драйвер перенаправител Kernel
+RdpVideoMini Remote Desktop Video M Kernel
+rdyboost     ReadyBoost             Kernel
+ReFS         ReFS                   File System
+ReFSv1       ReFSv1                 File System
+RFCOMM       Bluetooth Device (RFCO Kernel
+rhproxy      Драйвер прокси-сервера Kernel
+rspndr       Отвечающее устройство  Kernel
+sbp2port     SBP-2 драйвер шины тра Kernel
+scfilter     Драйвер фильтра смарт- Kernel
+scmbus       Драйвер Microsoft шины Kernel
+sdbus        sdbus                  Kernel
+SDFRd        Отражатель SDF         Kernel
+sdstor       Драйвер порта SD Stora Kernel
+SerCx        Serial UART Support Li Kernel
+SerCx2       Serial UART Support Li Kernel
+Serenum      Драйвер фильтра Serenu Kernel
+Serial       Драйвер последовательн Kernel
+sermouse     Драйвер мыши для посл. Kernel
+sfloppy      Дисковод большой емкос Kernel
+SgrmAgent    System Guard Runtime M Kernel
+SiSRaid2     SiSRaid2               Kernel        24.09.2008 21:28:20
+SiSRaid4     SiSRaid4               Kernel        02.10.2008 0:56:04
+SmartSAMD    SmartSAMD              Kernel        21.02.2019 20:54:44
+smbdirect    smbdirect              File System
+spaceport    Драйвер дискового прос Kernel
+SpbCx        Simple Peripheral Bus  Kernel
+srv2         Драйвер сервера Server File System
+srvnet       srvnet                 File System
+stexstor     stexstor               Kernel        27.11.2012 3:02:51
+storahci     Стандартный драйвер SA Kernel
+stornvme     Стандартный драйвер NV Kernel
+storqosflt   Драйвер-фильтр качеств File System
+storufs      Драйвер для универсаль Kernel
+swenum       Драйвер программной ши Kernel
+Tcpip        Драйвер протокола TCP/ Kernel
+Tcpip6       @todo.dll,-100;Microso Kernel
+tcpipreg     @%SystemRoot%\System32 Kernel
+tdx          Драйвер поддержки NetI Kernel
+terminpt     Microsoft Remote Deskt Kernel
+TPM          TPM                    Kernel
+TsUsbFlt     Драйвер-фильтр класса  Kernel
+TsUsbGD      Универсальное USB-устр Kernel
+tsusbhub     USB-концентратор удале Kernel
+tunnel       Драйвер адаптера минип Kernel
+UASPStor     Драйвер USB-устройства Kernel
+UcmCx0101    USB Connector Manager  Kernel
+UcmTcpciCx01 UCM-TCPCI KMDF Class E Kernel
+UcmUcsiAcpiC Клиент ACPI UCM-UCSI   Kernel
+UcmUcsiCx010 UCM-UCSI KMDF Class Ex Kernel
+Ucx01000     USB Host Support Libra Kernel
+UdeCx        USB Device Emulation S Kernel
+udfs         udfs                   File System
+UEFI         Драйвер UEFI (Майкросо Kernel
+Ufx01000     USB Function Class Ext Kernel
+UfxChipidea  USB-контроллер Chipide Kernel
+ufxsynopsys  USB-котроллер Synopsys Kernel
+umbus        UMBus драйвер перечисл Kernel
+UmPass       Драйвер UMPass Microso Kernel
+UrsChipidea  Драйвер с переключение Kernel
+UrsCx01000   USB Role-Switch Suppor Kernel
+UrsSynopsys  Драйвер с переключение Kernel
+Usb4DeviceRo Служба маршрутизатора  Kernel
+Usb4HostRout Служба маршрутизатора  Kernel
+usbaudio     Аудио драйвер USB (WDM Kernel
+usbaudio2    Служба USB Audio 2.0   Kernel
+usbccgp      Драйвер универсального Kernel
+usbcir       eHome инфракрасный рес Kernel
+usbehci      Драйвер минипорта Micr Kernel
+usbhub       Стандартный драйвер US Kernel
+USBHUB3      Концентратор SuperSpee Kernel
+usbohci      Драйвер минипорта Micr Kernel
+usbprint     Класс принтеров Micros Kernel
+usbser       Драйвер последовательн Kernel
+USBSTOR      Драйвер запоминающих у Kernel
+usbuhci      Драйвер минипорта Micr Kernel
+USBXHCI      xHCI-совместимый хост- Kernel
+VBoxGuest    VirtualBox Guest Drive Kernel        01.09.2022 16:46:21
+VBoxMouse    VirtualBox Guest Mouse Kernel        01.09.2022 16:46:23
+VBoxSF       VirtualBox Shared Fold File System   01.09.2022 16:46:23
+VBoxWddm     VBoxWddm               Kernel        01.09.2022 16:46:22
+vdrvroot     Перечислитель виртуаль Kernel
+VerifierExt  Расширение средства пр Kernel
+vhdmp        vhdmp                  Kernel
+vhf          Драйвер платформы Virt Kernel
+volmgr       Драйвер диспетчера том Kernel
+volmgrx      Диспетчер динамических Kernel
+volsnap      Драйвер теневого копир Kernel
+volume       Драйвер тома           Kernel
+vsmraid      vsmraid                Kernel        22.04.2014 22:21:41
+VSTXRAID     Драйвер RAID-контролле Kernel        21.01.2013 22:00:28
+vwifibus     Virtual Wireless Bus D Kernel
+vwififlt     Virtual WiFi Filter Dr Kernel
+WacomPen     Wacom - драйвер пера п Kernel
+wanarp       Драйвер IP ARP для уда Kernel
+wanarpv6     Драйвер IPv6 ARP для у Kernel
+wcifs        Windows Container Isol File System
+Wdf01000     Служба платформ драйве Kernel
+wdiwifi      WDI Driver Framework   Kernel
+WdmCompanion WdmCompanionFilter     Kernel
+WFPLWFS      Платформа фильтрации M Kernel
+WifiCx       Wifi Network Adapter C Kernel
+WIMMount     WIMMount               File System
+WindowsTrust Windows Trusted Execut Kernel
+WindowsTrust Служба безопасности до Kernel
+WinMad       Служба WinMad          Kernel        19.06.2019 16:18:11
+WinNat       Драйвер NAT Windows    Kernel
+WINUSB       Драйвер WinUsb         Kernel
+WinVerbs     Служба WinVerbs        Kernel        19.06.2019 16:18:12
+WmiAcpi      Microsoft Windows Mana Kernel
+Wof          Windows Overlay File S File System
+WpdUpFltr    WPD Upper Class Filter Kernel
+ws2ifsl      Драйвер WinSock IFS    Kernel
+WudfPf       User Mode Driver Frame Kernel
+WUDFRd       Windows Driver Foundat Kernel
+xboxgip      Драйвер протокола игро Kernel
+xinputhid    Драйвер-фильтр HID XIN Kernel
+
+Z:\МоиЛабы>DxDiag
+
+Z:\МоиЛабы>ECHO
+Режим вывода команд на экран (ECHO) включен.
+
+Z:\МоиЛабы>EDIT
+"EDIT" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+Z:\МоиЛабы>ENDLOCAL
+
+Z:\МоиЛабы>ERASE
+Ошибка в синтаксисе команды.
+
+Z:\МоиЛабы>EVENTCREATE -
+ОШИБКА: Неправильный параметр или аргумент - '-'.
+Введите "EVENTCREATE /?" для получения справки по использованию.
+
+Z:\МоиЛабы>EXPAND .
+Служебная программа распаковки файлов Microsoft (R)
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+Не указаны файлы.
+
+Z:\МоиЛабы>EXTRACT
+"EXTRACT" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+Z:\МоиЛабы>FC
+FC: Недостаточное количество имен файлов
+
+
+Z:\МоиЛабы>FIND
+FIND: Неправильный формат параметра
+
+Z:\МоиЛабы>FINDSTR
+FINDSTR: ╬°шсър т ъюьрэфэющ ёЄЁюъх
+Ошибка в синтаксисе команды.
+
+Z:\МоиЛабы>FOR

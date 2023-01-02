@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+
+    <title>Document</title>
+
+    <script defer>
+
+
+        async function SendRequest(){
+            const method = document.querySelector('input[name="Method"]:checked').value;
+            const pulpit = document.querySelector('.Pulpit').value;
+            const pulpitName = document.querySelector('.PulpitName').value;
+            const faculty = document.querySelector('.Faculty').value;
+            let url = `http://localhost:5000/api/pulpits`;
+            const table = document.getElementById('data');
+            const data = {
+                PULPIT: pulpit,
+                PULPIT_NAME: pulpitName,
+                FACULTY: faculty
+            };
+            let resultJson;
+
+            let onlyHeadersRowLeft = table.rows.length > 1;
+            while (onlyHeadersRowLeft) {
+                table.deleteRow(1);
+                onlyHeadersRowLeft =  table.rows.length > 1;
+            }
+
+
+            switch(method){
+                case "POST":
+                    fetch(url,{method:method,body:JSON.stringify(data)}).then(async (response) => {
+                        if (response.ok) {
+                            let  result = await response.json();
+                            console.log(result);
+                            createTableContentFromJson(table,new Array(result));
+                        }
+                        else
+                        {
+                            alert( await response.text());
+                        }
+
+                    })
+                        .catch((error) => {
+                            console.log(error)
+                        });
+
+                    break;
+                case "GET" :
+                    fetch(url,{method:method}).then(async (response) => {
+                        if (response.ok) {
+                            let  result = await response.json();
+                            console.log(result);
+                            createTableContentFromJson(table,result);
+                        }
+                        else
+                        {
+                            alert( await response.text());
+                        }
+
+                    })
+                        .catch((error) => {
+                            console.log(error)
+                        });
+                    break;
+                case "PUT":
+                    fetch(url,{method:method,body:JSON.stringify(data)}).then(async (response) => {
+                        if (response.ok) {
+                            let  result = await response.json();
+                            console.log(result);
+                            createTableContentFromJson(table,new Array(result));
+                        }
+                        else
+                        {
+                            alert( await response.text());
+                        }
+
+                    })
+                        .catch((error) => {
+                            console.log(error)
+                        });
+                    break;
+                case "DELETE":
+                    let delUrl = url+`/${pulpit}`;
+                    console.log(delUrl);
+                    fetch(delUrl,{method:method}).then(async (response) => {
+                        if (response.ok) {
+                            let  result = await response.json();
+                            console.log(result);
+                            createTableContentFromJson(table,result);
+                        }
+                        else
+                        {
+                            alert( await response.text());
+                        }
+
+                    })
+                        .catch((error) => {
+                            console.log(error)
+                        });
+                    break;
+
+            }
+
+
+
+
+
+
+        }
+
+        function createTableContentFromJson(table,resultJson){
+            resultJson.forEach(element => {
+                console.log(element);
+                const pulpit = element.PULPIT;
+                const pulpitName = element.PULPIT_NAME;
+                const faculty = element.FACULTY;
+
+                const row = table.insertRow();
+                const cell1 = row.insertCell(0);
+                const cell2 = row.insertCell(1);
+                const cell3 = row.insertCell(2);
+
+                cell1.innerHTML = pulpit;
+                cell2.innerHTML = pulpitName;
+                cell3.innerHTML = faculty;
+
+            });
+
+        }
+        async function Get() {
+            let errElem = document.getElementById("app_error");
+            errElem.innerHTML = '';
+            fetch('http://localhost:5000/api/subjects', {
+
+                method: 'GET',
+                headers: {'Accept': 'application/json'}
+            }).then(response => {
+                return response.json();
+            })
+                .then(pdata => {
+
+                    console.log('pdata', pdata);
+                    let result = document.getElementById("result");
+                    result.innerHTML = '';
+                    pdata.forEach(element => {
+                        result.innerHTML += '<p> SUBJECT:' + element.SUBJECT + ' SUBJECT NAME: ' + element.SUBJECT_NAME + ' PULPIT: ' + element.PULPIT + '</p>';
+                    });
+                });
+        }
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+<div class="wrapper">
+
+    <h2 class="Header">Methods</h2>
+    <div class="Methods">
+        <label>
+            GET
+            <input  type="radio" name="Method" value="GET">
+        </label>
+        <br>
+        <label>
+            POST
+            <input type="radio" name="Method" value="POST">
+        </label>
+        <br>
+        <label>
+            PUT
+            <input type="radio" name="Method" value="PUT">
+        </label>
+        <br>
+        <label>
+            DELETE
+            <input type="radio" name="Method" value="DELETE">
+        </label>
+    </div>
+
+    <h2 class="Header">Data</h2>
+    <div id="DataInputGroup" class="DataInputGroup">
+        <input class="Pulpit" type="text" placeholder="Pulpit">
+        <input class="PulpitName" type="text" placeholder="Pulpit name">
+        <input class="Faculty" type="text" placeholder="Faculty">
+    </div>
+
+    <Button class="SendButton" onclick="SendRequest()" >Send Request</Button>
+    <h2 class="Header">Result</h2>
+    <table id="data" class="table">
+        <tr id="header">
+            <th>Pulpit</th>
+            <th>Pulpit name</th>
+            <th>Faculty</th>
+        </tr>
+    </table>
+    <span id = result></span>
+
+</div>
+
+
+</body>
+
+
+</html>

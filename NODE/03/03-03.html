@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id = 'main'></div>
+
+</body>
+<script>
+    const main = document.querySelector('#main');
+    let n = 1;
+    const startTime = Date.now();
+    for (let i = 1 ; i <= 20 ; i++) {
+        fetch(`http://localhost:5000/fact?k=${i}`)
+            .then(response => response.json())
+            .then(data => {
+                main.innerHTML += `${n++}.Результат: ${Date.now() - startTime}-${data.k}/${data.fact}<br/>`;
+            });
+    }
+
+
+</script>
+</html>

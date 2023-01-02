@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "form-data": "^4.0.0",
+    "formidable": "^2.0.1",
+    "xml2js": "^0.4.23",
+    "xmlbuilder": "^15.1.1"
+  }
+}

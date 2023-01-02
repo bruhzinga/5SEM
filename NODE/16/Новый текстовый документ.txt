@@ -1,0 +1,33 @@
+query {
+    getFaculties {
+         FACULTY, FACULTY_NAME
+    }
+}
+
+query {
+    getFaculties(FACULTY: "ВВВ") {
+         FACULTY, FACULTY_NAME
+    }
+}
+
+mutation {
+    setFaculty(FACULTY: "ХХХ", FACULTY_NAME:"хэхэхэ") {
+         FACULTY, FACULTY_NAME
+    }
+}
+
+mutation {
+    delFaculty(FACULTY: "ХХХ")
+}
+
+query {
+    getTeachersByFaculty(FACULTY: "ИДиП") {
+         FACULTY, TEACHERS{TEACHER, TEACHER_NAME, PULPIT}
+    }
+}
+
+query {
+    getSubjectsByFaculties(FACULTY: "ИДиП") {
+         PULPIT, PULPIT_NAME, FACULTY, SUBJECTS{SUBJECT, SUBJECT_NAME, PULPIT}
+    }
+}

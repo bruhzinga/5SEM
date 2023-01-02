@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Document</title>
+</head>
+<body>
+<div class="wrapper">
+
+
+    <button class="button" onclick="get()">GET</button>
+
+
+    <div id="PostPutGroup" class="PostPutGroup">
+        <input class="id" type="number" placeholder="id">
+        <input class="name" type="text" placeholder="name">
+        <input class="birthday" type="date" placeholder="birthday">
+        <button class="PostPutGroupButton" onclick="post()">POST</button>
+        <button class="PostPutGroupButton" onclick="put()">PUT</button>
+    </div>
+
+
+    <div id="DeleteGroup" class="DeleteGroup">
+        <input id="deleteId" placeholder="id to delete" class="deleteId" type="number">
+        <button class="button" onclick="deleteUser()">DELETE</button>
+    </div>
+
+    <table id="data" class="table">
+        <tr id="header">
+            <th>id</th>
+            <th>name</th>
+            <th>birthday</th>
+        </tr>
+    </table>
+</div>
+
+
+</body>
+<script>
+    function get() {
+        const table = document.querySelector('#data');
+        fetch('http://localhost:3000/api/db', {method: 'GET'})
+            .then(response => response.json())
+            .then(users => {
+                while (table.rows.length > 1) {
+                    table.deleteRow(1);
+
+                }
+
+                users.forEach(x => {
+
+                    const id = x.id.toString();
+                    const birthday = x.bday.toString();
+                    const name = x.name.toString();
+
+                    const rowElement = document.createElement('tr');
+                    const idCell = document.createElement('td');
+                    const nameCell = document.createElement('td');
+                    const birthdayCell = document.createElement('td');
+
+                    idCell.textContent = id;
+                    nameCell.textContent = name;
+                    birthdayCell.textContent = birthday;
+
+                    rowElement.appendChild(idCell);
+                    rowElement.appendChild(nameCell);
+                    rowElement.appendChild(birthdayCell);
+
+                    table.appendChild(rowElement);
+                })
+            });
+    }
+
+    function post() {
+
+        const addGroup = document.querySelector('#PostPutGroup');
+        const id = +addGroup.querySelector(".id").value;
+        const name = addGroup.querySelector('.name').value;
+        const bday = addGroup.querySelector(".birthday").value;
+
+        fetch("http://localhost:3000/api/db", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+            body: JSON.stringify({id, name, bday})
+        })
+            .catch(() => {
+            })
+    }
+
+    function put() {
+        const addGroup = document.querySelector('#PostPutGroup')
+        const id = +addGroup.querySelector(".id").value;
+        const name = addGroup.querySelector(".name").value;
+        const bday = addGroup.querySelector(".birthday").value;
+        const user = {id, name, bday};
+
+        fetch("http://localhost:3000/api/db", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+            body: JSON.stringify(user)
+        })
+            .catch(() => {
+            })
+    }
+
+    function deleteUser() {
+        const id = +document.querySelector("#deleteId").value;
+        fetch(`http://localhost:3000/api/db?id=${id}`, {
+            method: "DELETE",
+        })
+            .catch(() => {
+            })
+    }
+
+</script>
+</html>

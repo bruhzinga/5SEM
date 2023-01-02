@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="demo">
+</div>
+</body>
+<script>
+
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = () => {
+            document.querySelector('#demo').innerText =
+                this.responseText;
+        }
+        xhttp.open("GET", "http://localhost:3000/api/name", true);
+        xhttp.send();
+
+    </script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 4px solid black;
+            padding: 10px;
+        }
+
+        * {
+            font-family: "Times New Roman", serif;
+            font-size: xxx-large;
+        }
+    </style>
+</head>
+<body>
+<!--create 3 fields to input from and to mail  -->
+<div id="center">
+    <form>
+        <label>MAIL</label>
+        <div><input type="text" id="from" placeholder="From"></div>
+        <div><input type="password" id="password" placeholder="Password"></div>
+        <div><input type="text" id="to" placeholder="To"></div>
+        <div><input type="text" id="message" placeholder="Message"></div>
+        <div><input type="button" value="Send" onclick="sendMail()"></div>
+    </form>
+</div>
+
+<script>
+    const sendMail = async () => {
+        let from = document.getElementById('from').value;
+        let password = document.getElementById('password').value;
+        let to = document.getElementById('to').value;
+        let message = document.getElementById('message').value;
+        await fetch('http://localhost:3000/', {
+            method: 'POST', mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'text/html'
+            },
+            body: JSON.stringify({
+                from: from,
+                password: password,
+                to: to,
+                message: message
+            })
+        });
+    };
+
+</script>
+
+</form>
+</body>
+
+</html>

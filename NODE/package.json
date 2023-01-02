@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "async": "^3.2.4",
+    "chokidar": "^3.5.3",
+    "graphql": "15.8.0",
+    "mongodb": "^4.13.0",
+    "mysql2": "^2.3.3",
+    "rpc-websockets": "^7.5.0",
+    "ws": "^8.11.0"
+  }
+}
